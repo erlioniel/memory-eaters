@@ -22,6 +22,20 @@ Suspect a leak?
 * Remember that memory leak not always looks like a memory leak, but usually as 
   an overload CPU (because of infinite GC) 
 
+Run details
+---
+```
+java \
+-verbose:gc \
+-Xmx25M \
+-Dcom.sun.management.jmxremote \
+-Dcom.sun.management.jmxremote.port=9010 \
+-Dcom.sun.management.jmxremote.local.only=false \
+-Dcom.sun.management.jmxremote.authenticate=false \
+-Dcom.sun.management.jmxremote.ssl=false \
+memory.MemoryEaterBart
+```
+
 Tools:
 ---
 * Visual VM

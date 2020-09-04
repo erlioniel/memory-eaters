@@ -7,7 +7,6 @@ import java.util.Vector;
 import static memory.Utils.inputAwait;
 
 public class MemoryEaterZoe {
-    // java -Xmx20M memory.MemoryEaterZoe
     @SneakyThrows
     public static void main(String[] args) {
         inputAwait();

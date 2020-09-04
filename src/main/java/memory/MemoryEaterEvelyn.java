@@ -10,27 +10,26 @@ import java.util.concurrent.atomic.AtomicLong;
 import static memory.Utils.inputAwait;
 
 public class MemoryEaterEvelyn {
-    // java -verbose:gc -Xmx250M memory.MemoryEaterBart
     @SneakyThrows
     public static void main(String[] args) {
         inputAwait();
 
         var counter = new AtomicLong();
         var eventList = new ConcurrentHashMap<Long, Event>();
-        new Thread(new CorrupterRunner(counter, eventList)).start();
+        new Thread(new EvilEvelyn(counter, eventList)).start();
         for (int i = 0; i < 10; i++) {
-            new Thread(new HealthyRunner(counter, eventList)).start();
+            new Thread(new HappyEvelyn(counter, eventList)).start();
         }
 
         while (true) {
             // Just wait
             Thread.sleep(500L);
-            System.out.println("Completed: " + counter.get());
+            System.out.println("Cakes eaten: " + counter.get());
         }
     }
 
     @RequiredArgsConstructor
-    private static class HealthyRunner implements Runnable {
+    private static class HappyEvelyn implements Runnable {
         private final AtomicLong counter;
         private final Map<Long, Event> eventList;
 
@@ -50,7 +49,7 @@ public class MemoryEaterEvelyn {
     }
 
     @RequiredArgsConstructor
-    private static class CorrupterRunner implements Runnable {
+    private static class EvilEvelyn implements Runnable {
         private final AtomicLong counter;
         private final Map<Long, Event> eventList;
 
