@@ -10,10 +10,10 @@ Talk Agenda
     * Java GC under the hood
     * Passing object by reference 
 * **The common leak cases**
-    * Overload buffers [Zoe DEMO](src/main/java/memory/MemoryEaterZoe.java)
+    * Overload buffers - [Zoe DEMO](src/main/java/memory/MemoryEaterZoe.java)
     * Unclosed connections / buffers
-    * Hidden infinite cycle [Bart DEMO](src/main/java/memory/MemoryEaterBart.java)
-    * Anonymous class context memory leak [Evelyn DEMO](src/main/java/memory/MemoryEaterEvelyn.java)
+    * Hidden infinite cycle - [Bart DEMO](src/main/java/memory/MemoryEaterBart.java)
+    * Anonymous class context memory leak - [Evelyn DEMO](src/main/java/memory/MemoryEaterEvelyn.java)
 * **Tools to debug**
     * Visual VM
     * Eclipse Memory Analyzer
