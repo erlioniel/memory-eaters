@@ -1,19 +1,19 @@
 Java Memory Leaks
 --
-This repository is the result of preparation for internal talk in Intrum Global Technologies to share
-my knowledge about how the memory leaks are working, what the usual cases for them and how
+This repository is the result of preparation for internal talk in [Intrum Global Technologies](https://intrum.com)
+to share my knowledge about how the memory leaks are working, what the usual cases for them and how
 to spot & fix them.
 
 Talk Agenda
 ---
-* **What's memory leak?**
+* **What's a memory leak?**
     * Java GC under the hood
     * Passing object by reference 
 * **The common leak cases**
-    * Overload buffers (Zoe DEMO)
+    * Overload buffers [Zoe DEMO](src/main/java/memory/MemoryEaterZoe.java)
     * Unclosed connections / buffers
-    * Hidden infinite cycle (Bart DEMO)
-    * Anonymous class context memory leak (Evelyn DEMO)
+    * Hidden infinite cycle [Bart DEMO](src/main/java/memory/MemoryEaterBart.java)
+    * Anonymous class context memory leak [Evelyn DEMO](src/main/java/memory/MemoryEaterEvelyn.java)
 * **Tools to debug**
     * Visual VM
     * Eclipse Memory Analyzer
