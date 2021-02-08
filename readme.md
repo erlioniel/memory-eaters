@@ -1,18 +1,23 @@
-Agenda:
+Java Memory Leaks
+--
+This repository is the result of preparation for internal talk in Intrum Global Technologies to share
+my knowledge about how the memory leaks are working, what the usual cases for them and how
+to spot & fix them.
+
+Talk Agenda
 ---
-* What's memory leak?
-    * GC under the hood
-    * Object by reference 
-* The common leak cases
+* **What's memory leak?**
+    * Java GC under the hood
+    * Passing object by reference 
+* **The common leak cases**
     * Overload buffers (Zoe DEMO)
     * Unclosed connections / buffers
     * Hidden infinite cycle (Bart DEMO)
     * Anonymous class context memory leak (Evelyn DEMO)
-* Tools to debug
+* **Tools to debug**
     * Visual VM
     * Eclipse Memory Analyzer
-* Real case (?)
-* Questions
+* **Questions**
 
 Suspect a leak?
 ---
@@ -26,18 +31,18 @@ Run details
 ---
 ```
 java \
--verbose:gc \
--Xmx25M \
--Dcom.sun.management.jmxremote \
--Dcom.sun.management.jmxremote.port=9010 \
--Dcom.sun.management.jmxremote.local.only=false \
--Dcom.sun.management.jmxremote.authenticate=false \
--Dcom.sun.management.jmxremote.ssl=false \
+   -verbose:gc \
+   -Xmx25M \
+   -Dcom.sun.management.jmxremote \
+   -Dcom.sun.management.jmxremote.port=9010 \
+   -Dcom.sun.management.jmxremote.local.only=false \
+   -Dcom.sun.management.jmxremote.authenticate=false \
+   -Dcom.sun.management.jmxremote.ssl=false \
 memory.MemoryEaterBart
 ```
 
-Tools:
+Tools
 ---
-* Visual VM
-* Eclipse Memory Analyzer
+* Visual VM - https://visualvm.github.io/
+* Eclipse Memory Analyzer - https://www.eclipse.org/mat/
 * Other tools listed here - https://stackify.com/java-memory-leaks-solutions/
